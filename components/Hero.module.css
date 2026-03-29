@@ -1,0 +1,226 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 8rem 4rem 5rem;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 55% 35%, rgba(201, 168, 76, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 80% at 5% 85%, rgba(22, 32, 53, 0.85) 0%, transparent 55%);
+  z-index: 0;
+}
+
+/* Animated rings */
+.ring1, .ring2, .ring3 {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  pointer-events: none;
+  z-index: 0;
+  animation: ringPulse 6s ease-in-out infinite;
+}
+
+.ring1 {
+  width: 500px; height: 500px;
+  top: 50%; left: 62%;
+  transform: translate(-50%, -50%);
+  animation-delay: 0s;
+}
+.ring2 {
+  width: 750px; height: 750px;
+  top: 50%; left: 62%;
+  transform: translate(-50%, -50%);
+  animation-delay: 2s;
+}
+.ring3 {
+  width: 1000px; height: 1000px;
+  top: 50%; left: 62%;
+  transform: translate(-50%, -50%);
+  animation-delay: 4s;
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.07; transform: translate(-50%, -50%) scale(1.03); }
+}
+
+/* Glow orbs */
+.orb1 {
+  position: absolute;
+  top: 20%; right: 10%;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: orbFloat 7s ease-in-out infinite;
+}
+
+.orb2 {
+  position: absolute;
+  bottom: 15%; left: 5%;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 37, 64, 0.9) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: orbFloat 9s ease-in-out infinite reverse;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeUpIn 0.8s ease forwards;
+}
+
+.line {
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.8rem;
+  animation: fadeUpIn 0.8s ease 0.15s both;
+}
+
+.em {
+  font-style: italic;
+  color: var(--gold);
+  position: relative;
+}
+
+/* Underline shimmer on em */
+.em::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { opacity: 0; transform: scaleX(0.3); }
+  50% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(0.3); }
+}
+
+.sub {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  line-height: 1.78;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  font-weight: 300;
+  animation: fadeUpIn 0.8s ease 0.3s both;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUpIn 0.8s ease 0.45s both;
+}
+
+/* Pulsing primary button */
+.btnPrimary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPrimary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btnPrimary:hover::before { opacity: 0.08; }
+
+.btnPrimary::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 2px;
+  background: transparent;
+  box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.6);
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(201, 168, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0); }
+}
+
+.btnPhone {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Scroll cue */
+.scrollCue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 3.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: fadeUpIn 1s ease 0.8s both;
+}
+
+.chevron {
+  animation: chevronBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes chevronBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 7rem 1.5rem 4rem; }
+  .actions { flex-direction: column; align-items: center; }
+  .ring1, .ring2, .ring3 { display: none; }
+}

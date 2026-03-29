@@ -1,0 +1,46 @@
+.band {
+  background: var(--gold);
+  padding: 5rem 0;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.sub {
+  color: rgba(8, 13, 26, 0.62);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.btn { white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding: 0 1.5rem;
+  }
+  .actions { flex-wrap: wrap; }
+}

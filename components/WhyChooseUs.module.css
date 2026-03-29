@@ -1,0 +1,169 @@
+.section {
+  background: var(--navy-mid);
+  padding: 7rem 0;
+}
+
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.featureItem {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.3rem 1.4rem;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.featureItem:hover {
+  border-color: var(--border);
+  background: rgba(201, 168, 76, 0.03);
+}
+
+.featureIcon {
+  width: 44px;
+  height: 44px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: all 0.3s;
+}
+
+.featureItem:hover .featureIcon {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--gold);
+}
+
+.featureText h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.01em;
+}
+
+.featureText p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* Savings card */
+.visual { position: relative; }
+
+.card {
+  background: var(--navy-light);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative;
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+}
+
+.savingsDisplay {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.savingsLabel {
+  font-size: 0.73rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.savingsAmount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.savingsSub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.breakdownRow {}
+
+.breakdownMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.breakdownLabel {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+}
+
+.breakdownRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breakdownValue {
+  font-size: 0.87rem;
+  color: var(--white);
+  font-weight: 500;
+}
+
+.breakdownSaving {
+  color: var(--green);
+  font-size: 0.76rem;
+}
+
+.progressBar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; gap: 3rem; padding: 0 1.5rem; }
+}

@@ -1,0 +1,129 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.4rem 0;
+  transition: all 0.4s ease;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scrolled {
+  background: rgba(8, 13, 26, 0.96);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.9rem 0;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.logoIcon {
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.link {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.link:hover { color: var(--gold); }
+
+.cta {
+  font-size: 0.78rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--white);
+  cursor: pointer;
+  padding: 0.45rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.hamburger:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold);
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(8, 13, 26, 0.98);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.9rem 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-subtle);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobileLink:hover { color: var(--gold); }
+
+.mobileCta {
+  margin-top: 1.2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .links { display: none; }
+  .cta { display: none; }
+  .hamburger { display: flex; }
+  .mobileMenu { display: flex; }
+  .inner { padding: 0 1.5rem; }
+}
